@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dl06lwdv35pek"]
+
+[ext_resource type="Texture2D" uid="uid://mpmq6xjiwpot" path="res://images/btn/btn_wise_levels.png" id="1_v2jlg"]
+[ext_resource type="Texture2D" uid="uid://cqyqbf6rjrsog" path="res://images/btn/btn_solid_choose.png" id="2_hhjcb"]
+
+[node name="Levelbtns" type="Node2D" unique_id=811266504]
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1236655614]
+offset_left = 850.0
+offset_top = 700.0
+offset_right = 1250.0
+offset_bottom = 800.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_v2jlg")
+texture_hover = ExtResource("2_hhjcb")

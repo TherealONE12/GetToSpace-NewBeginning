@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dehkrs5wcjfu6"]
+
+[ext_resource type="Script" uid="uid://c2nnio2tbeydt" path="res://scenes/menu.gd" id="1_jmdev"]
+[ext_resource type="Texture2D" uid="uid://usjxvxyni26t" path="res://images/space_menu_bg_4k.png" id="2_jmdev"]
+[ext_resource type="PackedScene" uid="uid://bjmpl6gr878dt" path="res://scenes/playbtn.tscn" id="2_upctu"]
+[ext_resource type="PackedScene" uid="uid://dl06lwdv35pek" path="res://scenes/levelbtns.tscn" id="3_o0tnf"]
+[ext_resource type="PackedScene" uid="uid://c6hfkcmylj8v3" path="res://scenes/creditsbtn.tscn" id="4_jmdev"]
+
+[node name="Menu" type="Node2D" unique_id=2114276536]
+script = ExtResource("1_jmdev")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=68583617]
+position = Vector2(816, 410)
+texture = ExtResource("2_jmdev")
+
+[node name="Play" parent="." unique_id=1492477456 instance=ExtResource("2_upctu")]
+script = null
+
+[node name="Levelbtns" parent="." unique_id=811266504 instance=ExtResource("3_o0tnf")]
+
+[node name="Creditsbtn" parent="." unique_id=689955775 instance=ExtResource("4_jmdev")]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bjmpl6gr878dt"]
+
+[ext_resource type="Texture2D" uid="uid://bva72ualujqat" path="res://images/btn/btn_wise_play.png" id="1_3tfu7"]
+[ext_resource type="Texture2D" uid="uid://bi8j1kw8y1845" path="res://images/btn/btn_solid_play.png" id="2_sj6tx"]
+
+[sub_resource type="GDScript" id="GDScript_3tfu7"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var mousepos = get_local_mouse_position()
+	
+"
+
+[node name="Play" type="Node2D" unique_id=1492477456]
+script = SubResource("GDScript_3tfu7")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=826051842]
+offset_left = 850.0
+offset_top = 600.0
+offset_right = 1250.0
+offset_bottom = 700.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_3tfu7")
+texture_hover = ExtResource("2_sj6tx")
