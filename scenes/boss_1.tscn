@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://djt1g63ie61ex" path="res://boss_1.gd" id="1_2tpq1"]
 [ext_resource type="Texture2D" uid="uid://n4w14k3eh46e" path="res://images/sprites2d_animated/nightsky_spritesheet.png" id="2_3b75m"]
 [ext_resource type="Script" uid="uid://gvkeqffyd5j3" path="res://scenes/animated_sprite_2d.gd" id="3_0hsuw"]
+[ext_resource type="Texture2D" uid="uid://dmopluwt7lr2j" path="res://images/holes_n_layovers/hole_shadow.png" id="4_kfyxm"]
 [ext_resource type="Script" uid="uid://clcc43huhi2yh" path="res://character_body_2d.gd" id="4_mq0xc"]
+[ext_resource type="Texture2D" uid="uid://bykce2e0fr5ve" path="res://images/holes_n_layovers/hole_edges.png" id="5_3kv24"]
 [ext_resource type="Texture2D" uid="uid://bpeomdhl2xp3o" path="res://images/player/cube_player.png" id="5_k5gbq"]
 [ext_resource type="Material" uid="uid://ddmxjnoa0korn" path="res://gradiants/DirtGrassParticles_Jump.tres" id="6_c2m15"]
 [ext_resource type="Material" uid="uid://b5f80irh7355i" path="res://gradiants/DirtGrassParticles_Slide_L.tres" id="7_uh0f8"]
@@ -12,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dl5w6h6y01pbh" path="res://images/bosses/teacher_idle.png" id="9_3b75m"]
 [ext_resource type="Texture2D" uid="uid://club4162amc2f" path="res://images/sprites2d_animated/star_spritesheet.png" id="9_3kv24"]
 [ext_resource type="Script" uid="uid://cxds64w6gsprh" path="res://scenes/animated_sprite_2d_2.gd" id="10_ym4x4"]
+[ext_resource type="Script" uid="uid://dt6opqiblndl" path="res://scenes/goal.gd" id="11_c2m15"]
+[ext_resource type="Script" uid="uid://cpjf33v6vvc8r" path="res://scenes/fly_pad_1.gd" id="13_k5gbq"]
+[ext_resource type="Texture2D" uid="uid://bxmb8rlxtapn4" path="res://images/sprites2d_animated/flypad_spritesheet.png" id="13_mq0xc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbghi"]
 atlas = ExtResource("2_3b75m")
@@ -193,7 +198,7 @@ size = Vector2(58, 55)
 size = Vector2(2951, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebdhu"]
-size = Vector2(1926.4375, 68)
+size = Vector2(1930.2188, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcfvj"]
 atlas = ExtResource("9_3kv24")
@@ -290,6 +295,59 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5da2"]
 size = Vector2(100, 101)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kv24"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym4x4"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ej81"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trowr"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ed83"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebdhu"]
+atlas = ExtResource("13_mq0xc")
+region = Rect2(640, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5da2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kv24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym4x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ej81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trowr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ed83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebdhu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwg0h"]
+size = Vector2(122, 18)
+
 [node name="Boss1" type="Node2D" unique_id=881776225]
 script = ExtResource("1_2tpq1")
 
@@ -299,6 +357,30 @@ scale = Vector2(2.0208333, 2.0129628)
 sprite_frames = SubResource("SpriteFrames_6ej81")
 animation = &"nightsky_level1"
 script = ExtResource("3_0hsuw")
+
+[node name="HoleShadow" type="Sprite2D" parent="." unique_id=387676117]
+position = Vector2(592, 961)
+texture = ExtResource("4_kfyxm")
+
+[node name="HoleEdge" type="Sprite2D" parent="." unique_id=1528804410]
+position = Vector2(592, 961)
+texture = ExtResource("5_3kv24")
+
+[node name="HoleShadow2" type="Sprite2D" parent="." unique_id=1917149892]
+position = Vector2(1377, 950)
+texture = ExtResource("4_kfyxm")
+
+[node name="HoleEdge2" type="Sprite2D" parent="." unique_id=742804844]
+position = Vector2(1377, 950)
+texture = ExtResource("5_3kv24")
+
+[node name="HoleShadow3" type="Sprite2D" parent="." unique_id=440523199]
+position = Vector2(971, 959)
+texture = ExtResource("4_kfyxm")
+
+[node name="HoleEdge3" type="Sprite2D" parent="." unique_id=986147725]
+position = Vector2(971, 959)
+texture = ExtResource("5_3kv24")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1878714255]
 position = Vector2(101, 553)
@@ -370,12 +452,24 @@ scale = Vector2(6, 6)
 position = Vector2(1457.8334, 16)
 shape = SubResource("RectangleShape2D_3ed83")
 
-[node name="floor" type="StaticBody2D" parent="." unique_id=1571204575]
+[node name="floor_Mode1" type="StaticBody2D" parent="." unique_id=1571204575]
 position = Vector2(8, 834)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=2101083083]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_Mode1" unique_id=2101083083]
 position = Vector2(964, 23)
 shape = SubResource("RectangleShape2D_ebdhu")
+
+[node name="floor_Mode2" type="StaticBody2D" parent="." unique_id=1625831290]
+position = Vector2(8, 834)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor_Mode2" unique_id=1258436915]
+polygon = PackedVector2Array(-2, 2, 0, -15, 777, -11, 881, 256, 873, 375, 1107, 392, 1070, 239, 1154, -4, 1155, -13, 1928, -11, 1934, 418, 109, 422)
+
+[node name="floor_Mode3" type="StaticBody2D" parent="." unique_id=460932109]
+position = Vector2(8, 834)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor_Mode3" unique_id=710269959]
+polygon = PackedVector2Array(0, 0, -1, -14, 401, -13, 497, 257, 499, 362, 671, 363, 680, 233, 773, -2, 872, 244, 875, 365, 1042, 376, 1078, 226, 1167, -13, 1278, 248, 1272, 380, 1450, 365, 1559, -10, 1929, 6, 1923, 466, 10, 489)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1597823209]
 visible = false
@@ -387,6 +481,7 @@ color = Color(0.90588236, 0.15686275, 0.11764706, 0.49411765)
 
 [node name="Goal" type="Area2D" parent="." unique_id=1180818211]
 position = Vector2(1527, 197)
+script = ExtResource("11_c2m15")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Goal" unique_id=795721220]
 sprite_frames = SubResource("SpriteFrames_wyxrv")
@@ -396,8 +491,73 @@ script = ExtResource("10_ym4x4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=376117922]
 shape = SubResource("RectangleShape2D_f5da2")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1100278986]
+position = Vector2(963, 545)
+zoom = Vector2(1.05, 1.05)
+
+[node name="FlyPad1" type="StaticBody2D" parent="." unique_id=1450239345]
+position = Vector2(420, 722)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyPad1" unique_id=75399913]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_f5da2")
+script = ExtResource("13_k5gbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad1" unique_id=1294752128]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwg0h")
+
+[node name="FlyPad2" type="StaticBody2D" parent="." unique_id=518571389]
+position = Vector2(748, 548)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyPad2" unique_id=488364174]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_f5da2")
+script = ExtResource("13_k5gbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad2" unique_id=892285789]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwg0h")
+
+[node name="FlyPad3" type="StaticBody2D" parent="." unique_id=1707371126]
+position = Vector2(968, 393)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyPad3" unique_id=525703213]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_f5da2")
+script = ExtResource("13_k5gbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad3" unique_id=162411405]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwg0h")
+
+[node name="FlyPad4" type="StaticBody2D" parent="." unique_id=1593832087]
+position = Vector2(1252, 541)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyPad4" unique_id=1754012240]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_f5da2")
+script = ExtResource("13_k5gbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad4" unique_id=1194721040]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwg0h")
+
+[node name="FlyPad5" type="StaticBody2D" parent="." unique_id=503403370]
+position = Vector2(1537, 707)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlyPad5" unique_id=941736690]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_f5da2")
+script = ExtResource("13_k5gbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad5" unique_id=2017169271]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kwg0h")
+
 [connection signal="boss_reset" from="player" to="Boss" method="_on_player_boss_reset"]
 [connection signal="body_entered" from="Boss/Area2D" to="player" method="_on_Boss_1_body_entered"]
 [connection signal="body_entered" from="Boss/Area2D2" to="player" method="_on_area_2d_Boss_Damager_body_entered"]
+[connection signal="body_entered" from="Boss/Area2D2" to="Boss" method="_on_area_2d_Bosss_lost_Live_body_entered"]
 [connection signal="body_entered" from="Kill" to="player" method="_on_kill_body_entered"]
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

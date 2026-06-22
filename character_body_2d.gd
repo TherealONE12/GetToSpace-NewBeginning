@@ -14,12 +14,15 @@ var startpointxboss = 1800
 var needsKill = 0
 var needsBossKilledPlayer = 0
 
+var FlyTimeout = false
+
 func show_hurt():
 	hurt_overlay.visible = true
 	await get_tree().create_timer(0.2).timeout
 	hurt_overlay.visible = false
 
 func _physics_process(delta: float) -> void:
+	
 	if is_on_floor() and velocity.y > 100:
 		dust.restart()
 		dust.emitting = true
@@ -71,6 +74,18 @@ func _physics_process(delta: float) -> void:
 		needsBossKilledPlayer = 0
 	
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		if "FlyPad" in col.get_collider().name and GlobalState.FlyPatch and not FlyTimeout:
+			velocity.y -= 800
+			FlyTimeout = true
+		if "FlyPad" in col.get_collider().name and not GlobalState.FlyPatch:
+			velocity.y -= 800
+
+	
+	if velocity.y > -10:
+		FlyTimeout = false
 
 
 func _on_kill_body_entered(body: Node2D) -> void:
@@ -92,10 +107,7 @@ func _on_Boss_1_body_entered(body: Node2D) -> void:
 		startpointxboss = 1800
 
 
-
 func _on_area_2d_Boss_Damager_body_entered(body: Node2D) -> void:
 	if body == self:
 		velocity.y -= 800
 		velocity.x += 800
-		
-		
