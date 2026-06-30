@@ -16,6 +16,8 @@ var needsBossKilledPlayer = 0
 
 var FlyTimeout = false
 
+
+
 func show_hurt():
 	hurt_overlay.visible = true
 	await get_tree().create_timer(0.2).timeout
@@ -91,13 +93,10 @@ func _physics_process(delta: float) -> void:
 func _on_kill_body_entered(body: Node2D) -> void:
 	if body == self:
 		needsKill = 1
-		startpointx = 150
-
-
-func _on_kill_v_2_body_entered(body: Node2D) -> void:
-	if body == self:
-		needsKill = 1
-		startpointx = 1800
+		if GlobalState.levelid == 2:
+			startpointx = 1700
+		else:
+			startpointx = 150
 
 
 func _on_Boss_1_body_entered(body: Node2D) -> void:
@@ -111,3 +110,14 @@ func _on_area_2d_Boss_Damager_body_entered(body: Node2D) -> void:
 	if body == self:
 		velocity.y -= 800
 		velocity.x += 800
+
+func _on_goal_body_entered(body: Node2D) -> void:
+	if body == self:
+		if GlobalState.levelid == 1:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")
+		elif GlobalState.levelid == 2:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_3.tscn")
+		elif GlobalState.levelid == 3:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_4.tscn")
+		elif GlobalState.levelid == 4:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/boss_1.tscn")

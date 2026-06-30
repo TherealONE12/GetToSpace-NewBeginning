@@ -1,9 +1,16 @@
 extends CharacterBody2D
-@onready var player = $"../player"
-@onready var camera = $"../Camera2D"
-@onready var floor_Mode1 = $"../floor_Mode1/CollisionShape2D"
+@onready var player = $"../baseLevelKomplex/player"
+@onready var camera = $"../baseLevelKomplex/Camera2D"
+@onready var floor_Mode1 = $"../baseLevelKomplex/floor/CollisionShape2D"
 @onready var floor_Mode2 = $"../floor_Mode2/CollisionPolygon2D"
 @onready var floor_Mode3 = $"../floor_Mode3/CollisionPolygon2D"
+@onready var mode1floorimagep1 = $"../HoleShadow3"
+@onready var mode1floorimagep2 = $"../HoleEdge3"
+@onready var mode2floorimagep1 = $"../HoleShadow"
+@onready var mode2floorimagep2 = $"../HoleEdge"
+@onready var mode2floorimagep3 = $"../HoleShadow2"
+@onready var mode2floorimagep4 = $"../HoleEdge2"
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -11,8 +18,18 @@ var max_velo = 400
 var max_inv_velo = -400
 var boss_alive = true
 var is_flying = false
+var first = true
 
 func _physics_process(delta: float) -> void:
+	if first == true:
+		mode1floorimagep1.visible = false
+		mode1floorimagep2.visible = false
+		mode2floorimagep1.visible = false
+		mode2floorimagep2.visible = false
+		mode2floorimagep3.visible = false
+		mode2floorimagep4.visible = false
+		first = false
+	
 	if boss_alive == true:
 		# Add the gravity.
 		if not is_on_floor():
@@ -20,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		
 		if is_flying:
 			velocity.y = 0
+			position.y = 750
 		
 		if player.position.x < position.x:
 			if velocity.x > max_inv_velo:
@@ -48,6 +66,12 @@ func _on_player_boss_reset(bossId: int) -> void:
 	floor_Mode2.set_deferred("disabled", true)
 	floor_Mode3.set_deferred("disabled", true)
 	is_flying = false
+	mode1floorimagep1.visible = false
+	mode1floorimagep2.visible = false
+	mode2floorimagep1.visible = false
+	mode2floorimagep2.visible = false
+	mode2floorimagep3.visible = false
+	mode2floorimagep4.visible = false
 
 
 func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
@@ -68,6 +92,10 @@ func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 			floor_Mode2.set_deferred("disabled", true)
 			floor_Mode3.set_deferred("disabled", false)
 			is_flying = true
+			mode2floorimagep1.visible = true
+			mode2floorimagep2.visible = true
+			mode2floorimagep3.visible = true
+			mode2floorimagep4.visible = true
 		elif GlobalState.lives < 3:
 			screen_shake(0.2, 4)
 			max_velo = 500
@@ -75,6 +103,9 @@ func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 			floor_Mode1.set_deferred("disabled", true)
 			floor_Mode2.set_deferred("disabled", false)
 			floor_Mode3.set_deferred("disabled", true)
+			mode1floorimagep1.visible = true
+			mode1floorimagep2.visible = true
+			is_flying = true
 
 func epic_kill_animation():
 	pass
