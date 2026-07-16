@@ -13,8 +13,8 @@ func _ready() -> void:
 	BaseKomplexOverridePlayer.z_index = 1
 	
 	GlobalState.levelid = 5
-	$Boss/KillPlayerArea/CollisionShape2D.get_parent().body_entered.connect(_on_boss_damager_body_entered)
-	$Boss/DamageToBoss/CollisionShape2D.get_parent().body_entered.connect(_on_kill_player_area_body_entered)
+	$Boss/DamageBoss/CollisionShape2D.get_parent().body_entered.connect(_on_boss_damager_body_entered)
+	$Boss/KillPlayer/CollisionShape2D.get_parent().body_entered.connect(_on_kill_player_area_body_entered)
 
 func _on_kill_player_area_body_entered(body: Node2D) -> void:
 	if body == BaseKomplexOverridePlayer:

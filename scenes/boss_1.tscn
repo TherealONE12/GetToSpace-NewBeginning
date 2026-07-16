@@ -272,18 +272,18 @@ position = Vector2(-31, 33)
 scale = Vector2(0.515625, 0.484375)
 sprite_frames = SubResource("SpriteFrames_3kv24")
 
-[node name="DamageToBoss" type="Area2D" parent="Boss" unique_id=597814855]
+[node name="KillPlayer" type="Area2D" parent="Boss" unique_id=597814855]
 priority = 1
 script = ExtResource("7_2tpq1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/DamageToBoss" unique_id=379996323]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/KillPlayer" unique_id=379996323]
 position = Vector2(-31, 32.5)
 shape = SubResource("RectangleShape2D_3b75m")
 
-[node name="KillPlayerArea" type="Area2D" parent="Boss" unique_id=777526813]
+[node name="DamageBoss" type="Area2D" parent="Boss" unique_id=777526813]
 script = ExtResource("8_3b75m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/KillPlayerArea" unique_id=888154758]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/DamageBoss" unique_id=888154758]
 position = Vector2(-31, 26)
 shape = SubResource("RectangleShape2D_trowr")
 
@@ -359,5 +359,5 @@ script = ExtResource("13_k5gbq")
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_kwg0h")
 
-[connection signal="body_entered" from="Boss/DamageToBoss" to="." method="_on_kill_player_area_body_entered"]
-[connection signal="body_entered" from="Boss/KillPlayerArea" to="." method="_on_boss_damager_body_entered"]
+[connection signal="body_entered" from="Boss/KillPlayer" to="." method="_on_kill_player_area_body_entered"]
+[connection signal="body_entered" from="Boss/DamageBoss" to="." method="_on_boss_damager_body_entered"]
