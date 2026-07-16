@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bxmb8rlxtapn4" path="res://images/sprites2d_animated/flypad_spritesheet.png" id="13_mq0xc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trowr"]
-size = Vector2(51, 51.5)
+size = Vector2(51, 54.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hsuw"]
 atlas = ExtResource("9_3b75m")
@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b75m"]
-size = Vector2(58, 55)
+size = Vector2(58, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kv24"]
 atlas = ExtResource("13_mq0xc")
@@ -274,13 +274,13 @@ sprite_frames = SubResource("SpriteFrames_3kv24")
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/KillPlayer" unique_id=379996323]
-position = Vector2(-31, 32.5)
+position = Vector2(-31, 34.5)
 shape = SubResource("RectangleShape2D_3b75m")
 
 [node name="DamageBoss" type="Area2D" parent="Boss" unique_id=777526813]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/DamageBoss" unique_id=888154758]
-position = Vector2(-31, 27.75)
+position = Vector2(-31, 26.25)
 shape = SubResource("RectangleShape2D_trowr")
 
 [node name="floor_Mode2" type="StaticBody2D" parent="." unique_id=1625831290]
