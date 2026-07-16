@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var vdustL = $"SlideParticlesL"
 @onready var vdustR = $"SlideParticlesR"
 
-signal boss_reset(bossId: int)
+
 
 const SPEED = 450.0
 const JUMP_VELOCITY = -450.0
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		velocity.y = 0
 		if GlobalState.is_boss_level == true:
-			boss_reset.emit(1)
+			GlobalState.bossreset = 1
 		needsKill = 0
 
 	if needsBossKilledPlayer == 1:
@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		position.y = startpointy
 		velocity.x = 0
 		velocity.y = 0
-		boss_reset.emit(1)
+		GlobalState.bossreset = 1
 		
 		needsBossKilledPlayer = 0
 	

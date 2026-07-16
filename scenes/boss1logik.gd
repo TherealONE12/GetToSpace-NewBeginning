@@ -46,6 +46,9 @@ func _physics_process(delta: float) -> void:
 			if velocity.x < max_velo:
 				velocity.x += 10
 		
+		if GlobalState.bossreset == 1:
+			_on_player_boss_reset(1)
+			GlobalState.bossreset = -1
 		move_and_slide()
 
 func screen_shake(duration: float, strength: float):

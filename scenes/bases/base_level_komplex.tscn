@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://dt6opqiblndl" path="res://scenes/goal.gd" id="8_ii6oo"]
 [ext_resource type="Texture2D" uid="uid://club4162amc2f" path="res://images/sprites2d_animated/star_spritesheet.png" id="9_dtfwk"]
 [ext_resource type="Script" uid="uid://cxds64w6gsprh" path="res://scenes/animated_sprite_2d_2.gd" id="10_k87lk"]
+[ext_resource type="Texture2D" uid="uid://d06xt1bd4uf3a" path="res://images/btn/btn_gohome.png" id="11_ritno"]
+[ext_resource type="Texture2D" uid="uid://cn07idp78w1ph" path="res://images/btn/btn_gohome_solid.png" id="12_w7wdq"]
+[ext_resource type="Script" uid="uid://cv442drnsc874" path="res://scenes/bases/go_home.gd" id="13_8ilro"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbghi"]
 atlas = ExtResource("1_xaksr")
@@ -136,9 +139,6 @@ size = Vector2(51, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4a5c"]
 size = Vector2(2951, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hybwx"]
-size = Vector2(1930.2188, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcfvj"]
 atlas = ExtResource("9_dtfwk")
@@ -290,11 +290,10 @@ position = Vector2(1457.8334, 16)
 shape = SubResource("RectangleShape2D_t4a5c")
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=1286945377]
-position = Vector2(8, 834)
+position = Vector2(9, 824)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=718674840]
-position = Vector2(964, 23)
-shape = SubResource("RectangleShape2D_hybwx")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="floor" unique_id=964480407]
+polygon = PackedVector2Array(-3, 0, 1934, -5, 1970, -285, 2053, -246, 1943, 251, -66, 246, -60, 0, -58, -268, -14, -270)
 
 [node name="Goal" type="Area2D" parent="." unique_id=561712145]
 position = Vector2(1808, 741)
@@ -321,5 +320,15 @@ offset_right = 1967.0
 offset_bottom = 1137.0
 color = Color(0.90588236, 0.15686275, 0.11764706, 0.49411765)
 
+[node name="GoHome" type="TextureButton" parent="." unique_id=1146573375]
+offset_left = 65.0
+offset_top = 51.0
+offset_right = 165.0
+offset_bottom = 151.0
+texture_normal = ExtResource("11_ritno")
+texture_hover = ExtResource("12_w7wdq")
+script = ExtResource("13_8ilro")
+
 [connection signal="body_entered" from="Kill" to="player" method="_on_kill_body_entered"]
 [connection signal="body_entered" from="Goal" to="player" method="_on_goal_body_entered"]
+[connection signal="pressed" from="GoHome" to="GoHome" method="_on_pressed"]

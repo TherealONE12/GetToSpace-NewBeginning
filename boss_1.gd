@@ -13,14 +13,16 @@ func _ready() -> void:
 	BaseKomplexOverridePlayer.z_index = 1
 	
 	GlobalState.levelid = 5
-	
+	$Boss/KillPlayerArea/CollisionShape2D.get_parent().body_entered.connect(_on_boss_damager_body_entered)
+	$Boss/DamageToBoss/CollisionShape2D.get_parent().body_entered.connect(_on_kill_player_area_body_entered)
 
+func _on_kill_player_area_body_entered(body: Node2D) -> void:
+	if body == BaseKomplexOverridePlayer:
+		BaseKomplexOverridePlayer.needsBossKilledPlayer = 1
+		BaseKomplexOverridePlayer.startpointx = 150
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_boss_damager_body_entered(body: Node2D) -> void:
+	if body == BaseKomplexOverridePlayer:
+		BaseKomplexOverridePlayer.position.y -= 1
+		BaseKomplexOverridePlayer.velocity.y -= 800
+		BaseKomplexOverridePlayer.velocity.x += 800
