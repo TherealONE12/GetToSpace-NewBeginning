@@ -8,11 +8,79 @@
 [ext_resource type="Texture2D" uid="uid://b0unnqnppklcb" path="res://images/sprites2d_animated/teacher_angry_idle.png" id="8_0hsuw"]
 [ext_resource type="Script" uid="uid://djx2c3d3g3gum" path="res://scenes/boss1logik.gd" id="9_0hsuw"]
 [ext_resource type="Texture2D" uid="uid://dl5w6h6y01pbh" path="res://images/bosses/teacher_idle.png" id="9_3b75m"]
+[ext_resource type="Texture2D" uid="uid://bxs0ahqvje1u3" path="res://images/sprites2d_animated/bomb_spritesheet.png" id="9_k5gbq"]
+[ext_resource type="AudioStream" uid="uid://b7s1lyr7w4k5c" path="res://freesound_community-teleport-14639.mp3" id="11_3b75m"]
+[ext_resource type="AudioStream" uid="uid://c5r6snpdlrgh8" path="res://musik/sfx/alexis_gaming_cam-woosh-long-cartoon-370386.mp3" id="12_0hsuw"]
 [ext_resource type="Script" uid="uid://cpjf33v6vvc8r" path="res://scenes/fly_pad_1.gd" id="13_k5gbq"]
 [ext_resource type="Texture2D" uid="uid://bxmb8rlxtapn4" path="res://images/sprites2d_animated/flypad_spritesheet.png" id="13_mq0xc"]
+[ext_resource type="Texture2D" uid="uid://4p3431cibbbs" path="res://images/sprites2d_animated/explosion_spritesheet.png" id="14_c2m15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfwgx"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txaef"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6nd6"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvu6w"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgv65"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuvo7"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmxpo"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxict"]
+atlas = ExtResource("14_c2m15")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uc1rx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfwgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txaef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6nd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvu6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgv65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuvo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmxpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxict")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trowr"]
-size = Vector2(51, 54.5)
+size = Vector2(54, 57.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hsuw"]
 atlas = ExtResource("9_3b75m")
@@ -146,7 +214,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"flying_phase1",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -169,11 +237,75 @@ animations = [{
 }],
 "loop": 1,
 "name": &"flying_phase2",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b75m"]
-size = Vector2(58, 51)
+size = Vector2(58, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll4uc"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgnl8"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfd0k"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r301"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8mh5"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm3ln"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ci1"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2q6c"]
+atlas = ExtResource("9_k5gbq")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcuvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll4uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgnl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfd0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r301")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8mh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm3ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ci1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2q6c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kv24"]
 atlas = ExtResource("13_mq0xc")
@@ -228,10 +360,407 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwg0h"]
 size = Vector2(122, 18)
 
+[sub_resource type="Animation" id="Animation_0hsuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(992, 754)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"flying_phase2"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/Bomb_anim3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss/Bomb_anim3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-38.000004, 50.999996)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss/Bomb_anim2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7487463]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Boss/Bomb_anim2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42.999977, 47.00004)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Boss/Bomb_anim2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Boss/Bomb_anim3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Explosion_lvl2:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Explosion_lvl3:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mq0xc"]
+resource_name = "boss_Lost1HP"
+length = 4.7286
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.55, 1.0989),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(992, 754), Vector2(999, 571)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.55, 0.7992, 1.332, 1.4985, 1.6317, 1.75, 1.88, 2, 2.13, 2.21, 2.32, 2.4642, 2.5641, 2.65, 2.76, 2.8305001, 2.9304001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.19024089, -1.8325958, -2.6179938, -5.4977875, -7.0685835, -9.162979, -12.304571, -15.184365, -18.325958, -20.158554, -23.300146, -26.79080401811296, -30.281462522101616, -32.02679177409595, -35.51745027808461, -37.69911184307752]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_3b75m")
+}, {
+"end_offset": 0.375,
+"start_offset": 0.2341,
+"stream": ExtResource("12_0hsuw")
+}],
+"times": PackedFloat32Array(0.033300012, 1.3653)
+}
+tracks/2/use_blend = true
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/AnimatedSprite2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.48),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"flying_phase1"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss/Bomb_anim1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.98, 3.42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Boss/Bomb_anim1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.06, 3.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-38.000004, 50.999996), Vector2(-36.000023, 239)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Explosion_lvl1:sprite_frames")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Explosion_lvl1:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.033300042, 3.2967, 3.3633, 3.4632, 3.5964, 3.6963, 3.7629, 3.8961),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 0, 1, 3, 4, 6, 5, 7]
+}
+
+[sub_resource type="Animation" id="Animation_k5gbq"]
+resource_name = "boss_Lost2HP"
+length = 3.996
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.58),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1009, 746), Vector2(1009, 501)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5994, 1.5318),
+"transitions": PackedFloat32Array(1, 1, 1.2311445),
+"update": 0,
+"values": [0.0, 0.0, 25.132742]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.18),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"flying_phase2"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/Bomb_anim3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.81),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss/Bomb_anim3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.81, 2.37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-38.000004, 50.999996), Vector2(333.00024, 304.99973)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss/Bomb_anim2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.81),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7487463]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Boss/Bomb_anim2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.81, 2.3643),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42.999977, 47.00004), Vector2(-357.9998, 298.00027)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Boss/Bomb_anim2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.81, 2.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Boss/Bomb_anim3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.81, 2.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Explosion_lvl2:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.3642998, 2.4308999, 2.4975, 2.5640998, 2.6306999, 2.6973, 2.7638998, 2.8305),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Explosion_lvl3:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.3643, 2.4309, 2.4975, 2.5641, 2.6307, 2.6973, 2.7639, 2.8305),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5gbq"]
+_data = {
+&"RESET": SubResource("Animation_0hsuw"),
+&"boss_Lost1HP": SubResource("Animation_mq0xc"),
+&"boss_Lost2HP": SubResource("Animation_k5gbq")
+}
+
 [node name="Boss1" type="Node2D" unique_id=881776225]
 script = ExtResource("1_2tpq1")
 
 [node name="baseLevelKomplex" parent="." unique_id=1155617665 instance=ExtResource("2_glbka")]
+position = Vector2(7, 14)
 
 [node name="HoleShadow" type="Sprite2D" parent="." unique_id=387676117]
 position = Vector2(592, 961)
@@ -250,38 +779,72 @@ position = Vector2(1377, 950)
 texture = ExtResource("5_3kv24")
 
 [node name="HoleShadow3" type="Sprite2D" parent="." unique_id=440523199]
-position = Vector2(971, 959)
+position = Vector2(973, 945)
 texture = ExtResource("4_kfyxm")
 
 [node name="HoleEdge3" type="Sprite2D" parent="." unique_id=986147725]
 position = Vector2(971, 959)
 texture = ExtResource("5_3kv24")
 
+[node name="Explosion_lvl1" type="AnimatedSprite2D" parent="." unique_id=891548191]
+position = Vector2(978.00006, 916)
+scale = Vector2(3.0351563, 2.9140623)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
+
+[node name="Explosion_lvl2" type="AnimatedSprite2D" parent="." unique_id=1725132002]
+position = Vector2(612, 964.00006)
+scale = Vector2(5.1155424, 6.1443167)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+
+[node name="Explosion_lvl3" type="AnimatedSprite2D" parent="." unique_id=522859439]
+position = Vector2(1396, 976)
+scale = Vector2(3.933071, 5.207725)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+
 [node name="Boss" type="CharacterBody2D" parent="." unique_id=1665590065]
-position = Vector2(1714, 760)
+position = Vector2(992, 754)
 script = ExtResource("9_0hsuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss" unique_id=1154918805]
-position = Vector2(-30.5, 33.5)
+position = Vector2(-37, 27)
 shape = SubResource("RectangleShape2D_trowr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss" unique_id=1373674488]
-position = Vector2(-31, 33)
+position = Vector2(-36, 28)
 scale = Vector2(0.515625, 0.484375)
 sprite_frames = SubResource("SpriteFrames_3kv24")
+animation = &"flying_phase2"
 
 [node name="KillPlayer" type="Area2D" parent="Boss" unique_id=597814855]
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/KillPlayer" unique_id=379996323]
-position = Vector2(-31, 34.5)
+position = Vector2(-36.258278, 25.658068)
 shape = SubResource("RectangleShape2D_3b75m")
 
 [node name="DamageBoss" type="Area2D" parent="Boss" unique_id=777526813]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/DamageBoss" unique_id=888154758]
-position = Vector2(-31, 26.25)
+position = Vector2(-36, 15.999983)
 shape = SubResource("RectangleShape2D_trowr")
+
+[node name="Bomb_anim1" type="AnimatedSprite2D" parent="Boss" unique_id=151255911]
+visible = false
+position = Vector2(-38.000004, 50.999996)
+sprite_frames = SubResource("SpriteFrames_bcuvt")
+
+[node name="Bomb_anim2" type="AnimatedSprite2D" parent="Boss" unique_id=82601983]
+visible = false
+position = Vector2(-42.999977, 47.00004)
+rotation = 0.7487463
+sprite_frames = SubResource("SpriteFrames_bcuvt")
+
+[node name="Bomb_anim3" type="AnimatedSprite2D" parent="Boss" unique_id=1467755600]
+visible = false
+position = Vector2(-38.000004, 50.999996)
+rotation = -0.87266463
+sprite_frames = SubResource("SpriteFrames_bcuvt")
 
 [node name="floor_Mode2" type="StaticBody2D" parent="." unique_id=1625831290]
 position = Vector2(8, 834)
@@ -354,6 +917,13 @@ script = ExtResource("13_k5gbq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlyPad5" unique_id=2017169271]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_kwg0h")
+
+[node name="Boss_animations" type="AnimationPlayer" parent="." unique_id=1461510623]
+libraries/ = SubResource("AnimationLibrary_k5gbq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1783108665]
+max_distance = 4096.0
+attenuation = 0.0034005772
 
 [connection signal="body_entered" from="Boss/KillPlayer" to="." method="_on_kill_player_area_body_entered"]
 [connection signal="body_entered" from="Boss/DamageBoss" to="." method="_on_boss_damager_body_entered"]

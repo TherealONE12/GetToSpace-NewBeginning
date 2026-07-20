@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 		global_position = Vector2(-9999, -9999)
 		if GlobalState.lives < 1:
 			global_position = original_position
+			visible = true

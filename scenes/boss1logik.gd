@@ -68,6 +68,7 @@ func _on_player_boss_reset(bossId: int) -> void:
 	floor_Mode1.set_deferred("disabled", false)
 	floor_Mode2.set_deferred("disabled", true)
 	floor_Mode3.set_deferred("disabled", true)
+	$KillPlayer/CollisionShape2D.set_deferred("enabled", true)
 	is_flying = false
 	mode1floorimagep1.visible = false
 	mode1floorimagep2.visible = false
@@ -80,12 +81,21 @@ func _on_player_boss_reset(bossId: int) -> void:
 func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 	if body == player:
 		GlobalState.lives -= 1
+		$DamageBoss/CollisionShape2D.set_deferred("disabled", true)
 		if GlobalState.lives < 1:
 			screen_shake(0.6, 12)
 			boss_alive = false
-			$Area2D/CollisionShape2D.set_deferred("disabled", true)
+			$KillPlayer/CollisionShape2D.set_deferred("disabled", true)
 			floor_Mode1.set_deferred("disabled", false)
 			floor_Mode3.set_deferred("disabled", true)
+			
+			mode2floorimagep1.visible = false
+			mode2floorimagep2.visible = false
+			mode2floorimagep3.visible = false
+			mode2floorimagep4.visible = false
+			mode1floorimagep1.visible = false
+			mode1floorimagep2.visible = false
+			
 			epic_kill_animation()
 		elif GlobalState.lives < 2:
 			screen_shake(0.4, 8)
@@ -99,6 +109,7 @@ func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 			mode2floorimagep2.visible = true
 			mode2floorimagep3.visible = true
 			mode2floorimagep4.visible = true
+			epic_lost2live_animation()
 		elif GlobalState.lives < 3:
 			screen_shake(0.2, 4)
 			max_velo = 500
@@ -109,6 +120,14 @@ func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 			mode1floorimagep1.visible = true
 			mode1floorimagep2.visible = true
 			is_flying = true
+			epic_lost1live_animation()
+		$DamageBoss/CollisionShape2D.set_deferred("disabled", false)
 
 func epic_kill_animation():
 	pass
+
+func epic_lost1live_animation():
+	$"../Boss_animations".play("boss_Lost1HP")
+
+func epic_lost2live_animation():
+	$"../Boss_animations".play("boss_Lost2HP")
