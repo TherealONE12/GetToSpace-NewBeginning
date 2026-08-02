@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalState="*uid://p5ndeo1gmoi2"
+NodeGlobal="*uid://c8yiwctvtkgn6"
+MusicManager="*uid://btlk2yq36g7m1"
 
 [display]
 
@@ -56,3 +58,4 @@ jump={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

@@ -11,6 +11,10 @@ size = Vector2(425.75, 68)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk4f3"]
 size = Vector2(89, 276.81534)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
+font_size = 25
+font_color = Color(0.65966165, 0.16605407, 0.20271742, 1)
+
 [node name="Level4" type="Node2D" unique_id=678558582]
 script = ExtResource("1_x7blo")
 
@@ -84,3 +88,11 @@ position = Vector2(1417, 878)
 position = Vector2(78, 122)
 rotation = 0.31415927
 shape = SubResource("RectangleShape2D_yk4f3")
+
+[node name="Label" type="Label" parent="." unique_id=2121779977]
+offset_left = 793.0
+offset_top = 597.0
+offset_right = 1160.0
+offset_bottom = 654.0
+text = "But not Everyone supports me"
+label_settings = SubResource("LabelSettings_0bbe5")

@@ -61,6 +61,9 @@ func _physics_process(delta: float) -> void:
 		position.y = startpointy
 		velocity.x = 0
 		velocity.y = 0
+		var stream = load("res://musik/sfx/freesound_community-damage-40114.mp3")
+		$"../SendMediaStuffSFX".stream = stream
+		$"../SendMediaStuffSFX".play()
 		if GlobalState.is_boss_level == true:
 			GlobalState.bossreset = 1
 		needsKill = 0
@@ -72,7 +75,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		velocity.y = 0
 		GlobalState.bossreset = 1
-		
+		var stream = load("res://musik/sfx/freesound_community-damage-40114.mp3")
+		$"../SendMediaStuffSFX".stream = stream
+		$"../SendMediaStuffSFX".play()
 		needsBossKilledPlayer = 0
 	
 	move_and_slide()
@@ -82,8 +87,14 @@ func _physics_process(delta: float) -> void:
 		if "FlyPad" in col.get_collider().name and GlobalState.FlyPatch and not FlyTimeout:
 			velocity.y -= 800
 			FlyTimeout = true
+			var stream = load("res://musik/sfx/dragon-studio-cartoon-jump-463196.mp3")
+			$"../SendMediaStuffSFX".stream = stream
+			$"../SendMediaStuffSFX".play()
 		if "FlyPad" in col.get_collider().name and not GlobalState.FlyPatch:
 			velocity.y -= 800
+			var stream = load("res://musik/sfx/dragon-studio-cartoon-jump-463196.mp3")
+			$"../SendMediaStuffSFX".stream = stream
+			$"../SendMediaStuffSFX".play()
 
 	
 	if velocity.y > -10:
@@ -120,4 +131,12 @@ func _on_goal_body_entered(body: Node2D) -> void:
 		elif GlobalState.levelid == 3:
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_4.tscn")
 		elif GlobalState.levelid == 4:
+			MusicManager.play_track(MusicManager.track_orbital)
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/boss_1.tscn")
+		elif GlobalState.levelid == 5:
+			MusicManager.play_track(MusicManager.track_space)
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/Menu.tscn")
+			
+			
+			
+			

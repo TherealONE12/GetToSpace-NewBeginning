@@ -9,9 +9,11 @@ func _ready() -> void:
 	btn_play.pressed.connect(_on_pressed_play)
 	btn_level.pressed.connect(_on_pressed_level)
 	btn_credit.pressed.connect(_on_pressed_credit)
+	MusicManager.play_track(MusicManager.track_space)
 
 func _on_pressed_play():
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	MusicManager.play_track(MusicManager.track_fly)
 
 func _on_pressed_level():
 	get_tree().change_scene_to_file("res://scenes/level_selector.tscn")

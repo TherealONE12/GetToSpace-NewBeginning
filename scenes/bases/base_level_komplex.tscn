@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://d06xt1bd4uf3a" path="res://images/btn/btn_gohome.png" id="11_ritno"]
 [ext_resource type="Texture2D" uid="uid://cn07idp78w1ph" path="res://images/btn/btn_gohome_solid.png" id="12_w7wdq"]
 [ext_resource type="Script" uid="uid://cv442drnsc874" path="res://scenes/bases/go_home.gd" id="13_8ilro"]
+[ext_resource type="PackedScene" uid="uid://c8yiwctvtkgn6" path="res://scenes/node.tscn" id="14_w7wdq"]
+[ext_resource type="Script" uid="uid://kcdemsw822rc" path="res://scenes/bases/canvas_layer.gd" id="15_dtfwk"]
+[ext_resource type="Texture2D" uid="uid://cbe7ikogw00cn" path="res://images/btn/btn_left.png" id="15_ii6oo"]
+[ext_resource type="Texture2D" uid="uid://cqlicka5isnet" path="res://images/btn/btn_right.png" id="16_dtfwk"]
+[ext_resource type="Texture2D" uid="uid://bfdmwknbvgpas" path="res://images/btn/btn_jump.png" id="17_k87lk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbghi"]
 atlas = ExtResource("1_xaksr")
@@ -329,6 +334,43 @@ texture_normal = ExtResource("11_ritno")
 texture_hover = ExtResource("12_w7wdq")
 script = ExtResource("13_8ilro")
 
+[node name="SendMediaStuffSFX" type="AudioStreamPlayer2D" parent="." unique_id=938813040]
+
+[node name="Backgroundmusic" type="AudioStreamPlayer2D" parent="." unique_id=1802712921]
+
+[node name="Node" parent="." unique_id=1512492550 instance=ExtResource("14_w7wdq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1959758797]
+visible = false
+script = ExtResource("15_dtfwk")
+
+[node name="MoveLeft" type="TextureButton" parent="CanvasLayer" unique_id=1460952992]
+offset_left = 1432.0
+offset_top = 892.0
+offset_right = 1560.0
+offset_bottom = 1020.0
+texture_normal = ExtResource("15_ii6oo")
+
+[node name="MoveRight" type="TextureButton" parent="CanvasLayer" unique_id=2009629446]
+offset_left = 1704.0
+offset_top = 898.0
+offset_right = 1832.0
+offset_bottom = 1026.0
+texture_normal = ExtResource("16_dtfwk")
+
+[node name="Jump" type="TextureButton" parent="CanvasLayer" unique_id=960211496]
+offset_left = 1571.0
+offset_top = 806.0
+offset_right = 1699.0
+offset_bottom = 934.0
+texture_normal = ExtResource("17_k87lk")
+
 [connection signal="body_entered" from="Kill" to="player" method="_on_kill_body_entered"]
 [connection signal="body_entered" from="Goal" to="player" method="_on_goal_body_entered"]
 [connection signal="pressed" from="GoHome" to="GoHome" method="_on_pressed"]
+[connection signal="button_down" from="CanvasLayer/MoveLeft" to="CanvasLayer" method="_on_move_left_button_down"]
+[connection signal="button_up" from="CanvasLayer/MoveLeft" to="CanvasLayer" method="_on_move_left_button_up"]
+[connection signal="button_down" from="CanvasLayer/MoveRight" to="CanvasLayer" method="_on_move_right_button_down"]
+[connection signal="button_up" from="CanvasLayer/MoveRight" to="CanvasLayer" method="_on_move_right_button_up"]
+[connection signal="button_down" from="CanvasLayer/Jump" to="CanvasLayer" method="_on_jump_button_down"]
+[connection signal="button_up" from="CanvasLayer/Jump" to="CanvasLayer" method="_on_jump_button_up"]

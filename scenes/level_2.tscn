@@ -3,7 +3,19 @@
 [ext_resource type="Script" uid="uid://28a6vmp8f8ow" path="res://scenes/level_2.gd" id="1_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://n1cguspvelu8" path="res://scenes/bases/base_level_komplex.tscn" id="2_jm1iu"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
+font_size = 24
+font_color = Color(1, 1, 0.1882353, 1)
+
 [node name="Level2" type="Node2D" unique_id=1019747939]
 script = ExtResource("1_y0kc7")
 
 [node name="baseLevelKomplex" parent="." unique_id=1155617665 instance=ExtResource("2_jm1iu")]
+
+[node name="Label" type="Label" parent="." unique_id=373364982]
+offset_left = 1345.0
+offset_top = 548.0
+offset_right = 1640.0
+offset_bottom = 582.0
+text = "I like the Stars and Space!"
+label_settings = SubResource("LabelSettings_0bbe5")

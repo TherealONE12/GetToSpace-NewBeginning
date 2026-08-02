@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://n1cguspvelu8" path="res://scenes/bases/base_level_komplex.tscn" id="2_uwxec"]
 [ext_resource type="Texture2D" uid="uid://brjjq2020w6uu" path="res://images/ground_rocky.png" id="6_wae8j"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
+font_size = 31
+
 [node name="Level3" type="Node2D" unique_id=208724812]
 script = ExtResource("1_hhfj6")
 
@@ -22,3 +25,12 @@ position = Vector2(94, 11)
 texture = ExtResource("6_wae8j")
 polygon = PackedVector2Array(-2, -2, 0, -66, 102, -68, 103, -142, 236, -147, 243, -232, 312, -232, 316, -336, 377, -333, 378, -415, 508, -272, 705, -276, 685, 1)
 uv = PackedVector2Array(-2, -2, 0, -66, 102, -68, 103, -142, 236, -147, 243, -232, 312, -232, 316, -336, 377, -333, 378, -415, 508, -272, 705, -276, 685, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1562130225]
+offset_left = 972.0
+offset_top = 90.0
+offset_right = 1366.0
+offset_bottom = 228.0
+text = "Sometimes I like to wander up on an Mountain, near the Moon"
+label_settings = SubResource("LabelSettings_0bbe5")
+autowrap_mode = 3

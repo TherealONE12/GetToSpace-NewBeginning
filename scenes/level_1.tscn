@@ -3,7 +3,18 @@
 [ext_resource type="Script" uid="uid://d3bbjwe1ktf2s" path="res://scenes/level_1.gd" id="1_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://n1cguspvelu8" path="res://scenes/bases/base_level_komplex.tscn" id="2_bswci"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
+font_size = 26
+
 [node name="Level1" type="Node2D" unique_id=284421013]
 script = ExtResource("1_pa8r4")
 
 [node name="baseLevelKomplex" parent="." unique_id=1155617665 instance=ExtResource("2_bswci")]
+
+[node name="Label" type="Label" parent="." unique_id=2028408415]
+offset_left = 272.0
+offset_top = 482.0
+offset_right = 312.0
+offset_bottom = 505.0
+text = "Hi, Im Cube!"
+label_settings = SubResource("LabelSettings_0bbe5")

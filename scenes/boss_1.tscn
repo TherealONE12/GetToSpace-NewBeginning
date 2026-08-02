@@ -9,11 +9,14 @@
 [ext_resource type="Script" uid="uid://djx2c3d3g3gum" path="res://scenes/boss1logik.gd" id="9_0hsuw"]
 [ext_resource type="Texture2D" uid="uid://dl5w6h6y01pbh" path="res://images/bosses/teacher_idle.png" id="9_3b75m"]
 [ext_resource type="Texture2D" uid="uid://bxs0ahqvje1u3" path="res://images/sprites2d_animated/bomb_spritesheet.png" id="9_k5gbq"]
+[ext_resource type="Script" uid="uid://bgx3t6fn5nrhf" path="res://scenes/animated_sprite_2d_boss.gd" id="10_c2m15"]
 [ext_resource type="AudioStream" uid="uid://b7s1lyr7w4k5c" path="res://freesound_community-teleport-14639.mp3" id="11_3b75m"]
 [ext_resource type="AudioStream" uid="uid://c5r6snpdlrgh8" path="res://musik/sfx/alexis_gaming_cam-woosh-long-cartoon-370386.mp3" id="12_0hsuw"]
 [ext_resource type="Script" uid="uid://cpjf33v6vvc8r" path="res://scenes/fly_pad_1.gd" id="13_k5gbq"]
 [ext_resource type="Texture2D" uid="uid://bxmb8rlxtapn4" path="res://images/sprites2d_animated/flypad_spritesheet.png" id="13_mq0xc"]
 [ext_resource type="Texture2D" uid="uid://4p3431cibbbs" path="res://images/sprites2d_animated/explosion_spritesheet.png" id="14_c2m15"]
+[ext_resource type="AudioStream" uid="uid://e74ws6wyd5pp" path="res://musik/sfx/flutie8211-bomb-and-echo-2-540400.mp3" id="14_kfyxm"]
+[ext_resource type="AudioStream" uid="uid://ckb5m8kqljwyy" path="res://musik/sfx/universfield-heavy-body-fall-352446.mp3" id="17_3kv24"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfwgx"]
 atlas = ExtResource("14_c2m15")
@@ -80,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trowr"]
-size = Vector2(54, 57.5)
+size = Vector2(54, 61.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hsuw"]
 atlas = ExtResource("9_3b75m")
@@ -361,7 +364,371 @@ animations = [{
 size = Vector2(122, 18)
 
 [sub_resource type="Animation" id="Animation_0hsuw"]
-length = 0.001
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss/AnimatedSprite2D_Boss:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss/Bomb_anim3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss/Bomb_anim3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-38.000004, 50.999996)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss/Bomb_anim2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7487463]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss/Bomb_anim2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42.999977, 47.00004)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss/Bomb_anim2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Boss/Bomb_anim3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Explosion_lvl2:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Explosion_lvl3:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Explosion_lvl4:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Explosion_lvl4-2:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Explosion_lvl4-3:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Explosion_lvl4-2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Explosion_lvl4-3:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("HoleShadow3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("HoleEdge3:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("HoleShadow:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("HoleEdge:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("HoleShadow2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("HoleEdge2:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Boss:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Boss:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1817, 753)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Intro1:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Intro2:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Intro3:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Intro4:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Intro5:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Intro6:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Intro7:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Intro8:visible")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c2m15"]
+resource_name = "boss_Kill"
+length = 3.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -369,10 +736,10 @@ tracks/0/path = NodePath("Boss:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.16666667, 0.86, 2.39, 3.12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(992, 754)]
+"values": [Vector2(1009, 746), Vector2(1005, 550), Vector2(1005, 550), Vector2(1200, 770)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -381,123 +748,178 @@ tracks/1/path = NodePath("Boss:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.86, 2.2311),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0, 24.609142453120047]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/2/path = NodePath("Explosion_lvl4:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.7326, 0.8325, 0.9324, 1.0323, 1.1322, 1.1988, 1.2321, 1.2986999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"flying_phase2"]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boss/Bomb_anim3:scale")
+tracks/3/path = NodePath("Explosion_lvl4-2:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"times": PackedFloat32Array(1.56, 1.6317, 1.7316, 1.8648, 1.9647, 2.0646, 2.1645),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 4, 5, 6, 7]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boss/Bomb_anim3:position")
+tracks/4/path = NodePath("Explosion_lvl4-3:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-38.000004, 50.999996)]
+"times": PackedFloat32Array(1.0323, 1.1322, 1.2321, 1.3986, 1.4985, 1.5651, 1.665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 6, 7]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Boss/Bomb_anim2:rotation")
+tracks/5/path = NodePath("Boss/DamageBoss:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(2.96),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.7487463]
+"update": 1,
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Boss/Bomb_anim2:position")
+tracks/6/path = NodePath("Explosion_lvl4:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-42.999977, 47.00004)]
+"times": PackedFloat32Array(0.73, 1.66),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Boss/Bomb_anim2:visible")
+tracks/7/path = NodePath("Explosion_lvl4-2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.49, 2.59),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Boss/Bomb_anim3:visible")
+tracks/8/path = NodePath("Explosion_lvl4-3:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.99, 2.12),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
-tracks/9/type = "value"
+tracks/9/type = "audio"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Explosion_lvl2:frame")
+tracks/9/path = NodePath("AudioStreamPlayer2D")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kfyxm")
+}],
+"times": PackedFloat32Array(0.7)
 }
-tracks/10/type = "value"
+tracks/9/use_blend = true
+tracks/10/type = "audio"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Explosion_lvl3:frame")
+tracks/10/path = NodePath("AudioStreamPlayer2D")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kfyxm")
+}],
+"times": PackedFloat32Array(0.9)
 }
+tracks/10/use_blend = true
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_3b75m")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kfyxm")
+}],
+"times": PackedFloat32Array(0, 1.4666667)
+}
+tracks/11/use_blend = true
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer2D")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_0hsuw")
+}],
+"times": PackedFloat32Array(0.23333335)
+}
+tracks/12/use_blend = true
+tracks/13/type = "audio"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AudioStreamPlayer2D")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_3kv24")
+}],
+"times": PackedFloat32Array(2.3666666)
+}
+tracks/13/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mq0xc"]
 resource_name = "boss_Lost1HP"
-length = 4.7286
+length = 4.266667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -544,7 +966,7 @@ tracks/2/use_blend = true
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boss/AnimatedSprite2D")
+tracks/3/path = NodePath("Boss/AnimatedSprite2D_Boss")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -555,7 +977,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/4/path = NodePath("Boss/AnimatedSprite2D_Boss:animation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -612,6 +1034,45 @@ tracks/8/keys = {
 "update": 1,
 "values": [7, 0, 1, 3, 4, 6, 5, 7]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HoleShadow3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("HoleEdge3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kfyxm")
+}],
+"times": PackedFloat32Array(3.0333333)
+}
+tracks/11/use_blend = true
 
 [sub_resource type="Animation" id="Animation_k5gbq"]
 resource_name = "boss_Lost2HP"
@@ -623,7 +1084,7 @@ tracks/0/path = NodePath("Boss:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.58),
+"times": PackedFloat32Array(0.13333334, 0.58),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1009, 746), Vector2(1009, 501)]
@@ -643,7 +1104,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boss/AnimatedSprite2D:animation")
+tracks/2/path = NodePath("Boss/AnimatedSprite2D_Boss:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -748,13 +1209,238 @@ tracks/10/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("HoleShadow:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.37),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("HoleEdge:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2.37),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("HoleShadow2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(2.37),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("HoleEdge2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(2.37),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AudioStreamPlayer2D")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_3b75m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/15/use_blend = true
+tracks/16/type = "audio"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AudioStreamPlayer2D")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_0hsuw")
+}],
+"times": PackedFloat32Array(0.100000024)
+}
+tracks/16/use_blend = true
+tracks/17/type = "audio"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AudioStreamPlayer2D")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kfyxm")
+}],
+"times": PackedFloat32Array(2.1)
+}
+tracks/17/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kfyxm"]
+resource_name = "start-scene"
+length = 15.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intro2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.02, 3.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Intro4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6.133333, 7.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Intro5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8.18, 9.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Intro6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(9.833333, 11.466666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Intro7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(12, 13.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Intro8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(13.533334, 14.966666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5gbq"]
 _data = {
 &"RESET": SubResource("Animation_0hsuw"),
+&"boss_Kill": SubResource("Animation_c2m15"),
 &"boss_Lost1HP": SubResource("Animation_mq0xc"),
-&"boss_Lost2HP": SubResource("Animation_k5gbq")
+&"boss_Lost2HP": SubResource("Animation_k5gbq"),
+&"start-scene": SubResource("Animation_kfyxm")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_qscog"]
+font_size = 20
+font_color = Color(0.774516, 0.21916142, 0.1953075, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcuvt"]
+font_size = 20
+font_color = Color(0.77924407, 0.27769214, 0.16291487, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kfyxm"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_uc1rx"]
+font_size = 26
+font_color = Color(0.29160905, 0.6411194, 0.22158447, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kv24"]
+font_size = 24
+font_color = Color(1, 0, 0.1254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sa710"]
+font_size = 25
+font_color = Color(0.14905632, 0.7462068, 0.22704253, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6j3u"]
+font_size = 23
+font_color = Color(0.8393804, 0.15011379, 0.09732788, 1)
 
 [node name="Boss1" type="Node2D" unique_id=881776225]
 script = ExtResource("1_2tpq1")
@@ -763,26 +1449,32 @@ script = ExtResource("1_2tpq1")
 position = Vector2(7, 14)
 
 [node name="HoleShadow" type="Sprite2D" parent="." unique_id=387676117]
+visible = false
 position = Vector2(592, 961)
 texture = ExtResource("4_kfyxm")
 
 [node name="HoleEdge" type="Sprite2D" parent="." unique_id=1528804410]
+visible = false
 position = Vector2(592, 961)
 texture = ExtResource("5_3kv24")
 
 [node name="HoleShadow2" type="Sprite2D" parent="." unique_id=1917149892]
+visible = false
 position = Vector2(1377, 950)
 texture = ExtResource("4_kfyxm")
 
 [node name="HoleEdge2" type="Sprite2D" parent="." unique_id=742804844]
+visible = false
 position = Vector2(1377, 950)
 texture = ExtResource("5_3kv24")
 
 [node name="HoleShadow3" type="Sprite2D" parent="." unique_id=440523199]
+visible = false
 position = Vector2(973, 945)
 texture = ExtResource("4_kfyxm")
 
 [node name="HoleEdge3" type="Sprite2D" parent="." unique_id=986147725]
+visible = false
 position = Vector2(971, 959)
 texture = ExtResource("5_3kv24")
 
@@ -796,25 +1488,47 @@ frame = 7
 position = Vector2(612, 964.00006)
 scale = Vector2(5.1155424, 6.1443167)
 sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
 
 [node name="Explosion_lvl3" type="AnimatedSprite2D" parent="." unique_id=522859439]
 position = Vector2(1396, 976)
 scale = Vector2(3.933071, 5.207725)
 sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
+
+[node name="Explosion_lvl4" type="AnimatedSprite2D" parent="." unique_id=524496333]
+visible = false
+position = Vector2(967, 628)
+scale = Vector2(1.2031994, 1.1590061)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
+
+[node name="Explosion_lvl4-2" type="AnimatedSprite2D" parent="." unique_id=1552331884]
+position = Vector2(991, 595)
+scale = Vector2(1.0770557, 0.8668758)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
+
+[node name="Explosion_lvl4-3" type="AnimatedSprite2D" parent="." unique_id=1526449292]
+visible = false
+position = Vector2(987.99994, 560.00006)
+scale = Vector2(1.0195793, 0.9355471)
+sprite_frames = SubResource("SpriteFrames_uc1rx")
+frame = 7
 
 [node name="Boss" type="CharacterBody2D" parent="." unique_id=1665590065]
-position = Vector2(992, 754)
+position = Vector2(1817, 753)
 script = ExtResource("9_0hsuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss" unique_id=1154918805]
 position = Vector2(-37, 27)
 shape = SubResource("RectangleShape2D_trowr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss" unique_id=1373674488]
+[node name="AnimatedSprite2D_Boss" type="AnimatedSprite2D" parent="Boss" unique_id=1373674488]
 position = Vector2(-36, 28)
 scale = Vector2(0.515625, 0.484375)
 sprite_frames = SubResource("SpriteFrames_3kv24")
-animation = &"flying_phase2"
+script = ExtResource("10_c2m15")
 
 [node name="KillPlayer" type="Area2D" parent="Boss" unique_id=597814855]
 priority = 1
@@ -824,14 +1538,15 @@ position = Vector2(-36.258278, 25.658068)
 shape = SubResource("RectangleShape2D_3b75m")
 
 [node name="DamageBoss" type="Area2D" parent="Boss" unique_id=777526813]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/DamageBoss" unique_id=888154758]
-position = Vector2(-36, 15.999983)
+position = Vector2(-36, 13.875)
 shape = SubResource("RectangleShape2D_trowr")
 
 [node name="Bomb_anim1" type="AnimatedSprite2D" parent="Boss" unique_id=151255911]
 visible = false
-position = Vector2(-38.000004, 50.999996)
+position = Vector2(-36.000023, 239)
 sprite_frames = SubResource("SpriteFrames_bcuvt")
 
 [node name="Bomb_anim2" type="AnimatedSprite2D" parent="Boss" unique_id=82601983]
@@ -924,6 +1639,79 @@ libraries/ = SubResource("AnimationLibrary_k5gbq")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1783108665]
 max_distance = 4096.0
 attenuation = 0.0034005772
+
+[node name="Intro1" type="Label" parent="." unique_id=681990385]
+visible = false
+offset_left = 779.0
+offset_top = 206.0
+offset_right = 979.0
+offset_bottom = 278.0
+text = "This is McRichard, my Teacher"
+label_settings = SubResource("LabelSettings_0bbe5")
+
+[node name="Intro2" type="Label" parent="." unique_id=1664507295]
+visible = false
+offset_left = 1463.0
+offset_top = 631.0
+offset_right = 1798.0
+offset_bottom = 668.0
+text = "How ofthen do I have to say to you"
+label_settings = SubResource("LabelSettings_qscog")
+
+[node name="Intro3" type="Label" parent="." unique_id=1876562667]
+visible = false
+offset_left = 1463.0
+offset_top = 624.0
+offset_right = 1588.0
+offset_bottom = 677.0
+text = "Forget Space! You have to learn!"
+label_settings = SubResource("LabelSettings_bcuvt")
+
+[node name="Intro4" type="Label" parent="." unique_id=1509054339]
+visible = false
+offset_left = 1455.0
+offset_top = 624.0
+offset_right = 1822.0
+offset_bottom = 694.0
+text = "You will never make it up there!"
+label_settings = SubResource("LabelSettings_kfyxm")
+
+[node name="Intro5" type="Label" parent="." unique_id=2026993797]
+visible = false
+offset_left = 210.0
+offset_top = 604.0
+offset_right = 406.0
+offset_bottom = 674.0
+text = "Yes I will!"
+label_settings = SubResource("LabelSettings_uc1rx")
+
+[node name="Intro6" type="Label" parent="." unique_id=306074886]
+visible = false
+offset_left = 1386.0
+offset_top = 626.0
+offset_right = 1851.0
+offset_bottom = 672.0
+text = "Then Prove that you can survive out there"
+label_settings = SubResource("LabelSettings_3kv24")
+
+[node name="Intro7" type="Label" parent="." unique_id=1594168883]
+visible = false
+offset_left = 212.0
+offset_top = 624.0
+offset_right = 655.0
+offset_bottom = 697.0
+text = "I will jump on you, 
+3 Times to let you see that I am Able!"
+label_settings = SubResource("LabelSettings_sa710")
+
+[node name="Intro8" type="Label" parent="." unique_id=1540087530]
+visible = false
+offset_left = 1538.0
+offset_top = 612.0
+offset_right = 1803.0
+offset_bottom = 666.0
+text = "YOU SHALL NOT PASS!"
+label_settings = SubResource("LabelSettings_n6j3u")
 
 [connection signal="body_entered" from="Boss/KillPlayer" to="." method="_on_kill_player_area_body_entered"]
 [connection signal="body_entered" from="Boss/DamageBoss" to="." method="_on_boss_damager_body_entered"]
