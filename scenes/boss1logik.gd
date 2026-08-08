@@ -37,9 +37,11 @@ func _ready() -> void:
 	$"../Intro7".visible = false
 	$"../Intro8".visible = false
 	
+	GlobalState.cutsceneoverride = true
 	$"../Boss_animations".play("start-scene")
 	while $"../Boss_animations".is_playing():
 		await get_tree().process_frame
+	GlobalState.cutsceneoverride = false
 	
 	$"../Intro1".visible = false
 	$"../Intro2".visible = false
@@ -65,6 +67,9 @@ func _physics_process(delta: float) -> void:
 		if is_flying:
 			velocity.y = 0
 
+		if is_flying and GlobalState.lives > 2:
+			_on_player_boss_reset(1)
+		
 		
 		if player.position.x < position.x:
 			if velocity.x > max_inv_velo:
@@ -96,6 +101,7 @@ func screen_shake(duration: float, strength: float):
 		tween.tween_property(camera, "offset", Vector2.ZERO, 0.05)
 
 func _on_player_boss_reset(bossId: int) -> void:
+	first = true
 	position.x = 1850
 	position.y = 777
 	velocity.x = 0
@@ -118,6 +124,7 @@ func _on_player_boss_reset(bossId: int) -> void:
 	$"../Explosion_lvl4".frame = 7
 	$"../Explosion_lvl4-2".frame = 7
 	$"../Explosion_lvl4-3".frame = 7
+	$"../Boss_animations".stop()
 	$"../Boss_animations".play("RESET")
 	$"../Intro1".visible = false
 	$"../Intro2".visible = false
@@ -127,6 +134,8 @@ func _on_player_boss_reset(bossId: int) -> void:
 	$"../Intro6".visible = false
 	$"../Intro7".visible = false
 	$"../Intro8".visible = false
+	first = false
+	
 
 func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 	if body == player:
@@ -176,6 +185,7 @@ func _on_area_2d_Bosss_lost_Live_body_entered(body: Node2D) -> void:
 
 func epic_kill_animation():
 	$"../Boss_animations".play("boss_Kill")
+
 
 func epic_lost1live_animation():
 	$"../Boss_animations".play("boss_Lost1HP")

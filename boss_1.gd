@@ -1,6 +1,7 @@
 extends Node2D
 @onready var BaseKomplexOverrideDeathSquare = $"baseLevelKomplex/ColorRect"
 @onready var BaseKomplexOverridePlayer = $"baseLevelKomplex/player"
+@onready var Boss1KomplexOverrideBoss = $"Boss"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,10 @@ func _on_kill_player_area_body_entered(body: Node2D) -> void:
 	if body == BaseKomplexOverridePlayer:
 		BaseKomplexOverridePlayer.needsBossKilledPlayer = 1
 		BaseKomplexOverridePlayer.startpointx = 150
+		GlobalState.lives = 3
+		GlobalState.bossreset = 1
+		$"Boss_animations".stop()
+		$"Boss_animations".play("RESET")
 
 func _on_boss_damager_body_entered(body: Node2D) -> void:
 	if body == BaseKomplexOverridePlayer:

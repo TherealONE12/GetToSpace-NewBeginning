@@ -1713,6 +1713,13 @@ offset_bottom = 666.0
 text = "YOU SHALL NOT PASS!"
 label_settings = SubResource("LabelSettings_n6j3u")
 
+[node name="Infos" type="Label" parent="." unique_id=743588864]
+offset_left = 745.0
+offset_top = 60.0
+offset_right = 941.0
+offset_bottom = 83.0
+text = "Jump on the Bosses Head"
+
 [connection signal="body_entered" from="Boss/KillPlayer" to="." method="_on_kill_player_area_body_entered"]
 [connection signal="body_entered" from="Boss/DamageBoss" to="." method="_on_boss_damager_body_entered"]
 [connection signal="body_entered" from="Boss/DamageBoss" to="Boss" method="_on_area_2d_Bosss_lost_Live_body_entered"]

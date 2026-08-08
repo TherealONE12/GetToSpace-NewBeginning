@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bjmpl6gr878dt" path="res://scenes/playbtn.tscn" id="2_upctu"]
 [ext_resource type="PackedScene" uid="uid://dl06lwdv35pek" path="res://scenes/levelbtns.tscn" id="3_o0tnf"]
 [ext_resource type="PackedScene" uid="uid://c6hfkcmylj8v3" path="res://scenes/creditsbtn.tscn" id="4_jmdev"]
+[ext_resource type="Texture2D" uid="uid://bhgi5vt8c6bd7" path="res://images/btn/btn_settings.png" id="6_aaywf"]
+[ext_resource type="Script" uid="uid://dvakgxbqwjat5" path="res://scenes/settings.gd" id="7_aaywf"]
 
 [node name="Menu" type="Node2D" unique_id=2114276536]
 script = ExtResource("1_jmdev")
@@ -19,3 +21,13 @@ script = null
 [node name="Levelbtns" parent="." unique_id=811266504 instance=ExtResource("3_o0tnf")]
 
 [node name="Creditsbtn" parent="." unique_id=689955775 instance=ExtResource("4_jmdev")]
+
+[node name="SettingsBtn" type="TextureButton" parent="." unique_id=1342266425]
+offset_left = 815.0
+offset_top = 914.0
+offset_right = 1215.0
+offset_bottom = 1014.0
+texture_normal = ExtResource("6_aaywf")
+script = ExtResource("7_aaywf")
+
+[connection signal="button_down" from="SettingsBtn" to="SettingsBtn" method="_on_button_down"]

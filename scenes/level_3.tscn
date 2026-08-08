@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://pgc1nx1s37gy" path="res://scenes/level_3.gd" id="1_hhfj6"]
 [ext_resource type="PackedScene" uid="uid://n1cguspvelu8" path="res://scenes/bases/base_level_komplex.tscn" id="2_uwxec"]
+[ext_resource type="Texture2D" uid="uid://dpbbr466ib1s4" path="res://images/admin_room_bg.png" id="4_1pn4d"]
 [ext_resource type="Texture2D" uid="uid://brjjq2020w6uu" path="res://images/ground_rocky.png" id="6_wae8j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0bbe5"]
 font_size = 31
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qscog"]
+size = Vector2(127, 255)
 
 [node name="Level3" type="Node2D" unique_id=208724812]
 script = ExtResource("1_hhfj6")
@@ -34,3 +38,22 @@ offset_bottom = 228.0
 text = "Sometimes I like to wander up on an Mountain, near the Moon"
 label_settings = SubResource("LabelSettings_0bbe5")
 autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=364899418]
+offset_top = 1132.0
+offset_right = 1920.0
+offset_bottom = 2212.0
+texture = ExtResource("4_1pn4d")
+
+[node name="Overridefloor" type="StaticBody2D" parent="." unique_id=21821422]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Overridefloor" unique_id=1299712511]
+polygon = PackedVector2Array(-5, 554, 3, 819, 1299, 816, 1287, 902, -14, 893, 18, 979, 3, 2208, 1918, 2203, 1923, 1090, 1998, 534, 2075, 579, 2120, 2282, -191, 2285, -128, 545)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1694825416]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=392568607]
+position = Vector2(1918, 695)
+shape = SubResource("RectangleShape2D_qscog")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

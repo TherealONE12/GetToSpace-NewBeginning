@@ -23,8 +23,8 @@ func show_hurt():
 	await get_tree().create_timer(0.2).timeout
 	hurt_overlay.visible = false
 
-func _physics_process(delta: float) -> void:
 	
+func _physics_process(delta: float):
 	if is_on_floor() and velocity.y > 100:
 		dust.restart()
 		dust.emitting = true
@@ -79,6 +79,10 @@ func _physics_process(delta: float) -> void:
 		$"../SendMediaStuffSFX".stream = stream
 		$"../SendMediaStuffSFX".play()
 		needsBossKilledPlayer = 0
+	
+	if GlobalState.cutsceneoverride == true:
+		velocity.x = 0
+		velocity.y = 0
 	
 	move_and_slide()
 	

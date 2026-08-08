@@ -18,3 +18,11 @@ offset_right = 312.0
 offset_bottom = 505.0
 text = "Hi, Im Cube!"
 label_settings = SubResource("LabelSettings_0bbe5")
+
+[node name="Label2" type="Label" parent="." unique_id=1221856589]
+offset_left = 547.0
+offset_top = 52.0
+offset_right = 1053.0
+offset_bottom = 88.0
+text = "Move with a and d and jump with space! (or the buttons)"
+label_settings = SubResource("LabelSettings_0bbe5")
