@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://25pyyomwwgpj"]
+
+[ext_resource type="PackedScene" uid="uid://j16xh1c7df6b" path="res://scenes/bases/basde_level_komplex_v_2.tscn" id="1_jnqru"]
+
+[node name="Stage2Lvl1" type="Node2D" unique_id=531175437]
+
+[node name="BaseLevelKomplex_V2" parent="." unique_id=498287068 instance=ExtResource("1_jnqru")]

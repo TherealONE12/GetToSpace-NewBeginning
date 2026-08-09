@@ -89,7 +89,7 @@ func _physics_process(delta: float):
 	for i in get_slide_collision_count():
 		var col = get_slide_collision(i)
 		if "FlyPad" in col.get_collider().name and GlobalState.FlyPatch and not FlyTimeout:
-			velocity.y -= 800
+			velocity.y = -800
 			FlyTimeout = true
 			var stream = load("res://musik/sfx/dragon-studio-cartoon-jump-463196.mp3")
 			$"../SendMediaStuffSFX".stream = stream

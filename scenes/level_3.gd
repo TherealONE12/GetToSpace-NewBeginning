@@ -2,8 +2,8 @@ extends Node2D
 @onready var BaseKomplexOverrideGoal = $"baseLevelKomplex/Goal"
 @onready var BaseKomplexOverrideFloor = $"baseLevelKomplex/floor/CollisionShape2D"
 @onready var BaseKomplexOverrideKill = $"baseLevelKomplex/Kill/CollisionShape2D"
-@onready var player = $"../baseLevelKomplex/player"
-@onready var camera = $"../baseLevelKomplex/Camera2D"
+@onready var player = $"baseLevelKomplex/player"
+@onready var camera = $"baseLevelKomplex/Camera2D"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player:
-		camera
+		camera.position = Vector2(963,1700)

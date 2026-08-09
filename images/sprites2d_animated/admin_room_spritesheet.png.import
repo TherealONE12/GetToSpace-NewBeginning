@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpbbr466ib1s4"
-path="res://.godot/imported/admin_room_bg.png-2a43d9f373c6099312e6a8bce4fea24c.ctex"
+uid="uid://bih3mgwhtccwh"
+path="res://.godot/imported/admin_room_spritesheet.png-d48ab256ed2b81e189f0b3cec7a22f15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/admin_room_bg.png"
-dest_files=["res://.godot/imported/admin_room_bg.png-2a43d9f373c6099312e6a8bce4fea24c.ctex"]
+source_file="res://images/sprites2d_animated/admin_room_spritesheet.png"
+dest_files=["res://.godot/imported/admin_room_spritesheet.png-d48ab256ed2b81e189f0b3cec7a22f15.ctex"]
 
 [params]
 
