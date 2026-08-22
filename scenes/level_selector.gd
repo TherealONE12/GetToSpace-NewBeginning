@@ -36,3 +36,7 @@ func _on_level_4_button_pressed() -> void:
 func _on_boss_1_button_pressed() -> void:
 	MusicManager.play_track(MusicManager.track_orbital)
 	get_tree().change_scene_to_file("res://scenes/boss_1.tscn")
+
+
+func _on_go_next_side_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_selector_2.tscn")

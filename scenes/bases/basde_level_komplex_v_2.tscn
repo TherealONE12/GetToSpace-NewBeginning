@@ -121,11 +121,11 @@ size = Vector2(100, 101)
 [node name="BaseLevelKomplex_V2" type="Node2D" unique_id=498287068]
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1011640142]
-position = Vector2(101, 553)
+position = Vector2(93, 557)
 script = ExtResource("3_8e725")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=372588535]
-position = Vector2(862, -8)
+position = Vector2(0, -2)
 zoom = Vector2(1.05, 1.05)
 
 [node name="GoHome" type="TextureButton" parent="player/Camera2D" unique_id=1213396487]
@@ -136,6 +136,7 @@ offset_bottom = -394.0
 texture_normal = ExtResource("11_7wi47")
 texture_hover = ExtResource("12_3gorw")
 script = ExtResource("13_713w7")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1232911118]
 position = Vector2(33, -33)
@@ -175,13 +176,8 @@ position = Vector2(-485.00003, 1097)
 scale = Vector2(6, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill" unique_id=1760479306]
-position = Vector2(1462.5, 164.33334)
+position = Vector2(1401, 386.00003)
 shape = SubResource("RectangleShape2D_xau8s")
-
-[node name="floor" type="StaticBody2D" parent="." unique_id=1736371040]
-position = Vector2(9, 824)
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="floor" unique_id=1414538263]
 
 [node name="Goal" type="Area2D" parent="." unique_id=929704907]
 position = Vector2(1808, 741)

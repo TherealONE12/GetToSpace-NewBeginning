@@ -95,4 +95,5 @@ texture_hover = ExtResource("8_wioao")
 [connection signal="pressed" from="Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="pressed" from="Level4Button" to="." method="_on_level_4_button_pressed"]
 [connection signal="pressed" from="Boss1Button" to="." method="_on_boss_1_button_pressed"]
+[connection signal="pressed" from="GoNextSide" to="." method="_on_go_next_side_pressed"]
 [connection signal="pressed" from="GoHome" to="." method="_on_go_home_pressed"]
